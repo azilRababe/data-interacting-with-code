@@ -25,7 +25,7 @@ def love_movies(db):
 
 def directors_named_like_count(db, name):
     # return the number of directors which contain a given word in their name
-    query = f"SELECT  count(*) from directors where upper(name) like '% upper({name}) %'"
+    query = f"SELECT  count(*) from directors where upper(name) like '%{name}%'"
     db.execute(query)
     results = db.fetchall()
     return results[0][0]
